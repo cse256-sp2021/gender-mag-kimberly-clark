@@ -1,6 +1,14 @@
 // ---- Define your dialogs  and panels here ----
 
+var effective_permissions = define_new_effective_permissions("id_name", add_info_col = true, which_permissions = null);
 
+var user_select_field = define_new_user_select_field("id_name", "select user", function(selected_user) {
+    $('id_name').attr('username', selected_user)
+});
+
+var new_dialog = "test";
+
+var new_dialog = define_new_dialog("id_name", title='Definition');
 
 // ---- Display file structure ----
 
