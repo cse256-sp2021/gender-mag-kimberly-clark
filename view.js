@@ -1,14 +1,18 @@
 // ---- Define your dialogs  and panels here ----
 
-var effective_permissions = define_new_effective_permissions("id_name", add_info_col = true, which_permissions = null);
 
-var user_select_field = define_new_user_select_field("id_name", "select user", function(selected_user) {
-    $('id_name').attr('username', selected_user)
+
+let effective_permissions = define_new_effective_permissions("id_name", add_info_col = true, which_permissions = null);
+
+//function selected_user () { }
+
+let user_select_field = define_new_user_select_field("id_name", "select user", on_user_change = function(selected_user){
+    $('#id_name').attr('username', selected_user)
 });
 
 var new_dialog = "test";
 
-var new_dialog = define_new_dialog("id_name", title='Definition');
+var new_dialog = define_new_dialog("id_name", "Permissions Dialog");
 
 // ---- Display file structure ----
 
@@ -80,3 +84,23 @@ $('.permbutton').click( function( e ) {
 
 // ---- Assign unique ids to everything that doesn't have an ID ----
 $('#html-loc').find('*').uniqueId() 
+
+//add the word "Permissions" behind the lock icon
+$('.permbutton').append('View Permissions for this File');
+
+//put effective permissions panel on the page
+$('#sidepanel').append(effective_permissions);
+
+//put user select field on the page
+$('#sidepanel').prepend(user_select_field);
+
+
+$('.perm_info').click(function(){
+
+    console.log('clicked!')
+    new_dialog.dialog('open')
+    console.log($('#id_name').attr('filepath'))
+    console.log($('#id_name').attr('username'))
+    console.log($(this))
+
+})

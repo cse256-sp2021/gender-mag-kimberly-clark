@@ -74,7 +74,7 @@ function make_user_list(id_prefix, usermap, add_attributes = false) {
 // new_dialog.dialog('open')
 // new_dialog.dialog('close')
 //
-// - id_orefux is any unique id prefix, as usual
+// - id_prefix is any unique id prefix, as usual
 // - title is a string which will go in the title area of the dialog box
 // - options is a set of jquery-ui options
 // - returns the dialog jquery object
@@ -211,7 +211,7 @@ function define_grouped_permission_checkboxes(id_prefix, which_groups = null) {
     let group_table = $(`
     <table id="${id_prefix}" class="ui-widget-content" width="100%">
         <tr id="${id_prefix}_header">
-            <th id="${id_prefix}_header_p" width="99%">Permissions for <span id="${id_prefix}_header_username"></span>
+            <th id="${id_prefix}_header_p" width="99%"> Permissions for selected user <span id="${id_prefix}_header_username"></span>
             </th>
             <th id="${id_prefix}_header_allow">Allow</th>
             <th id="${id_prefix}_header_deny">Deny</th>
