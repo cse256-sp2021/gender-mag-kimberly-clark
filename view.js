@@ -2,7 +2,7 @@
 
 
 
-let effective_permissions = define_new_effective_permissions("id_name", add_info_col = true, which_permissions = null);
+//let effective_permissions = define_new_effective_permissions("id_name", add_info_col = true, which_permissions = null);
 
 //function selected_user () { }
 
