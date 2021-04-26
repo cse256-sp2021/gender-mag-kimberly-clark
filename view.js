@@ -135,6 +135,9 @@ $('#sidepanel').append('<p>- "Remove User"</p>')
 $('#sidepanel').append('<p>- If necessary, follow the secuirty message</p>')
 $('#sidepanel').append('<p>Hint: deny every permission that the user is allowed</p>')
 
+$('#sidepanel').append('<br><h3><em>Minimize the MTurk banner <img height="15px" src="mturk_arrow.png"> to see more!</em></h3>')
+
+
 $('#sidepanel').append('<br><h3>To restrict permissions for a group member (ex: employee3 in the employees group):</h3>')
 $('#sidepanel').append('<p>- Open the file you are changing permissions for</p>')
 $('#sidepanel').append('<p>- "Advanced"</p>')
