@@ -8,7 +8,7 @@ show_starter_dialogs = false // set this to "false" to disable the survey and 3-
 perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
     // The following are standard jquery-ui options. See https://jqueryui.com/dialog/
     height: 500,
-    width: 400,
+    width: 600,
     buttons: {
         OK:{
             text: "OK",
@@ -29,7 +29,7 @@ perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
 
 // Make the initial "Object Name:" text:
 // If you pass in valid HTML to $(), it will *create* elements instead of selecting them. (You still have to append them, though)
-obj_name_div = $('<div id="permdialog_objname" class="section">Object Name: <span id="permdialog_objname_namespan"></span> </div>')
+obj_name_div = $('<div id="permdialog_objname" class="section">You are editing permissions for this file: <span id="permdialog_objname_namespan"></span> </div>')
 
 //Make the div with the explanation about special permissions/advanced settings:
 advanced_expl_div = $('<div id="permdialog_advanced_explantion_text">To view and edit advanced permissions and settings, click Advanced.</div>')
@@ -38,6 +38,11 @@ advanced_expl_div = $('<div id="permdialog_advanced_explantion_text">To view and
 inherited_expl_div = $('<br><div id="permdialog_inherited_explanation_text">If the checkbox is gray, that means the permission is inherited from the parent folder. Go to the parent folder and make permissions changes from there.</div>')
 
 ta_expl_div = $('<br><div id="permdialog_ta_explanation_text">Special: remember the teaching_assistant user is also a student, so any of the student permissions that are denied will override teaching_assistant permissions.</div>')
+
+
+//NEW GOOGLE LIKE PERMISSIONS
+users_list = $('<br><div id="permdialog_users_list">test</div>')
+
 
 // Make the (grouped) permission checkboxes table:
 grouped_permissions = define_grouped_permission_checkboxes('permdialog_grouped_permissions')
@@ -83,7 +88,7 @@ cant_remove_dialog = define_new_dialog('cant_remove_inherited_dialog', 'Security
 cant_remove_dialog.html(`
 <div id="cant_remove_text">
     You can't remove <span id="cant_remove_username_1" class = "cant_remove_username"></span> because this object is inheriting permissions from 
-    its parent. To remove <span id="cant_remove_username_2" class = "cant_remove_username"></span>, you must remove the user from the parent folder. Go to the parent folder, and then try removing <span id="cant_remove_username_2" class = "cant_remove_username"></span> from there.
+    its parent. To remove <span id="cant_remove_username_2" class = "cant_remove_username"></span> from the permission settings, you must deny every permission that <span id="cant_remove_username_2" class = "cant_remove_username"></span> is allowed. Use the table below to deny every permission that <span id="cant_remove_username_1" class = "cant_remove_username"></span> has.
 </div>`)
 
 // Make a confirmation "are you sure you want to remove?" dialog
@@ -155,8 +160,9 @@ perm_dialog.append(perm_add_user_select)
 perm_add_user_select.append(perm_remove_user_button) // Cheating a bit again - add the remove button the the 'add user select' div, just so it shows up on the same line.
 perm_dialog.append(grouped_permissions)
 perm_dialog.append(advanced_expl_div)
-perm_dialog.append(inherited_expl_div)
-perm_dialog.append(ta_expl_div)
+//perm_dialog.append(inherited_expl_div)
+//perm_dialog.append(ta_expl_div)
+//perm_dialog.append(users_list)
 
 // --- Additional logic for reloading contents when needed: ---
 //Define an observer which will propagate perm_dialog's filepath attribute to all the relevant elements, whenever it changes:
