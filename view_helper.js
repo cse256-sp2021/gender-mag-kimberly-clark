@@ -211,7 +211,7 @@ function define_grouped_permission_checkboxes(id_prefix, which_groups = null) {
     let group_table = $(`
     <table id="${id_prefix}" class="ui-widget-content" width="100%">
         <tr id="${id_prefix}_header">
-            <th id="${id_prefix}_header_p" width="99%"> View and edit basic permissions for selected user here: <span id="${id_prefix}_header_username"></span>
+            <th id="${id_prefix}_header_p" width="99%"> Select a user from above to view and edit basic permissions. Selected user: <span id="${id_prefix}_header_username"></span>
             </th>
             <th id="${id_prefix}_header_allow">Allow</th>
             <th id="${id_prefix}_header_deny">Deny</th>
@@ -518,4 +518,4 @@ $('#filestructure').css({
     'width':'49%',
     'vertical-align': 'top'
 })
-$('#filestructure').after('<div id="sidepanel" style="display:inline-block;width:30%;float:right"></div>')
+$('#filestructure').after('<div id="sidepanel" style="display:inline-block;width:30%;float:right;padding-right:15px;"></div>')

@@ -34,7 +34,7 @@ permission_groups = {
         permissions.READ_EXTENDED_ATTR,
         permissions.READ_PERMS,
     ],
-    Write: [
+    Make_changes_Write: [
         permissions.WRITE_DATA,
         permissions.APPEND_DATA,
         permissions.WRITE_ATTR,
@@ -47,7 +47,7 @@ permission_groups = {
         permissions.READ_PERMS,
         permissions.EXECUTE,
     ],
-    Modify: [
+    Make_changes_Modify: [
         permissions.WRITE_DATA,
         permissions.APPEND_DATA,
         permissions.WRITE_ATTR,
@@ -55,7 +55,7 @@ permission_groups = {
         permissions.DELETE,
         permissions.DELETE_SUB,
     ],
-    Full_control: [
+    Complete_access: [
         permissions.LIST,
         permissions.READ_ATTR,
         permissions.READ_EXTENDED_ATTR,

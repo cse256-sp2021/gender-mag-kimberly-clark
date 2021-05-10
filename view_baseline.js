@@ -1,5 +1,5 @@
 // Configuration
-show_starter_dialogs = true // set this to "false" to disable the survey and 3-minute timer. Set to "true" before submitting to MTurk!!
+show_starter_dialogs = false // set this to "false" to disable the survey and 3-minute timer. Set to "true" before submitting to MTurk!!
 
 // ---- Set up main Permissions dialog ----
 
@@ -54,7 +54,7 @@ file_permission_users = define_single_select_list('permdialog_file_user_list', f
     grouped_permissions.attr('username', selected_user)
 })
 file_permission_users.css({
-    'height':'80px',
+    'height':'130px',
 })
 
 // Make button to add a new user to the list:
@@ -154,10 +154,11 @@ perm_remove_user_button.click(function(){
 
 // --- Append all the elements to the permissions dialog in the right order: --- 
 perm_dialog.append(obj_name_div)
-perm_dialog.append($('<div id="permissions_user_title">Select a User:</div>'))
-perm_dialog.append(file_permission_users)
 perm_dialog.append(perm_add_user_select)
 perm_add_user_select.append(perm_remove_user_button) // Cheating a bit again - add the remove button the the 'add user select' div, just so it shows up on the same line.
+perm_dialog.append($('<div id="permissions_user_title">Select a User:</div>'))
+perm_dialog.append(file_permission_users)
+
 perm_dialog.append(grouped_permissions)
 perm_dialog.append(advanced_expl_div)
 //perm_dialog.append(inherited_expl_div)
